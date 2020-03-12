@@ -1,1 +1,1 @@
-# github-finder-with-hooks
+# github-finder-with-hooks (and context)
