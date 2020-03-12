@@ -9,6 +9,7 @@ import User from './components/users/User';
 import Search from './components/users/Search';
 import Alert from './components/layout/Alert';
 import About from './components/pages/About';
+import GithubState from './context/github/GithubState';
 import './App.css';
 import Axios from 'axios';
 
@@ -79,56 +80,58 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <div className='App'>
-        <Navbar />
-        <div className='container'>
-          <Alert alert={alert} />
+    <GithubState>
+      <Router>
+        <div className='App'>
+          <Navbar />
+          <div className='container'>
+            <Alert alert={alert} />
 
-          {/* We want to wrap all the routes in a switch so it shows one route at a time. */}
-          {/* router > App > container > switch > route > render > fragment > component  */}
-          <Switch>
-            {/* Search and Users route  */}
-            <Route
-              exact
-              path='/'
-              render={props => (
-                <Fragment>
-                  <Search
-                    searchUsers={searchUsers}
-                    clearUsers={clearUsers}
-                    showClear={users.length > 0 ? true : false}
-                    setAlert={showAlert}
-                  />
-                  <Users loading={loading} users={users} />
-                </Fragment>
-              )}
-            />
+            {/* We want to wrap all the routes in a switch so it shows one route at a time. */}
+            {/* router > App > container > switch > route > render > fragment > component  */}
+            <Switch>
+              {/* Search and Users route  */}
+              <Route
+                exact
+                path='/'
+                render={props => (
+                  <Fragment>
+                    <Search
+                      searchUsers={searchUsers}
+                      clearUsers={clearUsers}
+                      showClear={users.length > 0 ? true : false}
+                      setAlert={showAlert}
+                    />
+                    <Users loading={loading} users={users} />
+                  </Fragment>
+                )}
+              />
 
-            {/* About route */}
-            <Route exact path='/about' component={About} />
+              {/* About route */}
+              <Route exact path='/about' component={About} />
 
-            {/* Single User route*/}
-            <Route
-              exact
-              path='/user/:login'
-              render={props => (
-                <Fragment>
-                  <User
-                    {...props}
-                    getUser={getUser}
-                    getRepos={getRepos}
-                    user={user}
-                    repos={repos}
-                    loading={loading}
-                  />
-                </Fragment>
-              )}
-            />
-          </Switch>
+              {/* Single User route*/}
+              <Route
+                exact
+                path='/user/:login'
+                render={props => (
+                  <Fragment>
+                    <User
+                      {...props}
+                      getUser={getUser}
+                      getRepos={getRepos}
+                      user={user}
+                      repos={repos}
+                      loading={loading}
+                    />
+                  </Fragment>
+                )}
+              />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </GithubState>
   );
 };
 
