@@ -38,11 +38,18 @@ class App extends Component {
 
     // Set state to response data
     /////////////////////////////
-
-    this.setState({
-      users: res.data.items,
-      loading: false
-    });
+    console.log(res);
+    if (res.data.total_count === 0) {
+      console.log('nothing here');
+      this.setState({
+        loading: false
+      });
+    } else {
+      this.setState({
+        users: res.data.items,
+        loading: false
+      });
+    }
   };
 
   // Get single Github user when 'More' button is clicked, username = login
