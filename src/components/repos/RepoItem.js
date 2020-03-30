@@ -5,7 +5,7 @@ export const RepoItem = ({ repo }) => {
   return (
     <div className='card'>
       <h3>
-        <a className='text-light' href={repo.html_url}>
+        <a className='text-dark' href={repo.html_url}>
           {repo.name}
         </a>
       </h3>

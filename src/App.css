@@ -3,11 +3,11 @@
 /* Global Styles */
 
 :root {
-  --primary-color: #969081;
-  --dark-color: #706c67;
-  --light-color: #ece8e1;
+  --primary-color: #cec8c2;
+  --dark-color: #948077;
+  --light-color: #e0d6cc;
   --danger-color: #af3a17;
-  --success-color: #257e52;
+  --success-color: #e49348;
 }
 
 * {
@@ -20,12 +20,12 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--dark-color);
   text-decoration: none;
 }
 
@@ -228,7 +228,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: var(--success-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
