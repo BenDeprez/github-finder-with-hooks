@@ -3,11 +3,11 @@
 /* Global Styles */
 
 :root {
-  --primary-color: #cec8c2;
-  --dark-color: #948077;
-  --light-color: #e0d6cc;
+  --primary-color: #ebe4e0;
+  --dark-color: #4b443b;
+  --light-color: #fffdfa;
   --danger-color: #af3a17;
-  --success-color: #e49348;
+  --success-color: #257e52;
 }
 
 * {
@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  text-shadow: 0px 0px 2px rgb(255, 255, 255);
 }
 
 ul {
@@ -74,7 +74,7 @@ img {
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color: var(--dark-color);
 }
 
 .text-dark {
@@ -228,7 +228,7 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: var(--success-color);
+  color: #333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -263,7 +263,7 @@ img {
   text-align: center;
   margin: 0.3rem;
   background: var(--light-color);
-  color: rgb(179, 179, 179);
+  color: rgb(59, 55, 55);
   border-radius: 5px;
 }
 
@@ -280,7 +280,7 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: #fff;
+  color: rgb(68, 63, 63);
 }
 
 .btn-light,
@@ -288,6 +288,7 @@ img {
 .badge-light,
 .alert-light {
   background: var(--light-color);
+  border: 1px solid #d1d1d1;
   color: #333;
 }
 
@@ -396,7 +397,7 @@ table th {
 }
 
 .navbar a {
-  color: #fff;
+  color: rgb(44, 39, 39);
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
